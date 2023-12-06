@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab1._1
+namespace lab1._1 //17 вариант
 {
     internal class Class1
     {
@@ -21,10 +21,25 @@ namespace lab1._1
             {
                 sum += (int)array[i];
             }
+            int C = random.Next(-100,100);
+            int count = 0;
+            foreach (double i in array)
+            {
+                if (i < C)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("массив:");
             printarr(array);
+            Console.WriteLine("сумма целых частей элементов массива, расположенных после последнего отрицательного элемента:");
             Console.WriteLine(sum);
+            Console.WriteLine("С = " + C);
+            Console.WriteLine("количество элементов массива, меньших С:");
+            Console.WriteLine(count);
             Array.Sort(array);
             Array.Reverse(array);
+            Console.WriteLine("сначала располагалются все элементы, отличающиеся от максимального не более чем на 20%, а потом — все остальные:");
             printarr(array);
 
 
@@ -50,8 +65,9 @@ namespace lab1._1
                     }
                 }
             }
-
+            Console.WriteLine("матрица:");
             printmat(matrix);
+            Console.WriteLine("количество строк, содержащих хотя бы один нулевой элемент:");
             Console.WriteLine(str);
 
             int len = 1;
@@ -75,6 +91,7 @@ namespace lab1._1
                 }
             }
 
+            Console.WriteLine("номер столбца, в котором находится самая длинная серия одинаковых элементов:");
             Console.WriteLine(column);
 
         }
